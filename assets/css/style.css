@@ -465,47 +465,39 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 90vh;
+  padding: 2rem 3%;                 /* was 9% — main width gain */
   background: linear-gradient(to bottom, #57059e, #4a00e0);
 }
 .skills h2 {
   color: #fff;
 }
 .skills .heading span {
-  /* color: rgb(255, 230, 0); */
   color: yellow;
 }
 .skills .container {
   background: rgba(0, 0, 22, 0.4);
   color: #fff;
   border-radius: 1rem;
-  padding: 2rem;
-  width: 90%;
-  margin: auto;
-  margin-top: 2rem;
+  padding: 3rem;
+  width: 100%;                      /* was 90% */
+  max-width: 1600px;                /* keeps it sane on ultrawide screens */
+  margin: 2rem auto 0;
 }
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  flex-wrap: wrap;
-  margin-bottom: 6rem;
-padding: 2rem;
-/* padding-left: 10rem; */
-  gap: 1.8rem;
+  grid-template-columns: repeat(4, 1fr);   /* was 6 → each card ~50% wider */
+  gap: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
 }
 .skills .container .bar {
   color: #000;
-   margin-bottom: 15px;
-  padding: 10px;
-  
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 22, 0.9);
-  transition: 0.2s; 
-  /* width: 125px;*/
-  height: 200px; 
+  padding: 2.5rem 2rem;
+  min-height: 20rem;                /* was fixed 200px height */
   font-weight: bolder;
   background: rgb(227, 235, 223);
-  border-radius: 50px;
+  border-radius: 3rem;
+  transition: 0.2s;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .skills .container .bar:hover {
@@ -517,39 +509,30 @@ padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 1rem;
-  margin-top: 1rem;
-}
-.skills .container .bar .info i {
-  font-size: 4rem;
 }
 .skills .container .bar .info span {
   font-size: 2rem;
   font-weight: 500;
   font-family: "Poppins";
-  margin-left: 0.5rem;
 }
 
-
-/* skills media queries starts*/
 @media screen and (max-width: 1050px) {
   .skills .container {
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
+    padding: 1.5rem;
   }
   .skills .container .row {
     grid-template-columns: repeat(2, 1fr);
-    margin: 1rem;
-    padding: 2rem 0.2rem 2rem 0.2rem;
-    gap: 1rem;
-  }
-  .skills .container {
-    margin-top: 5px;
-    width: 100%;
+    gap: 1.5rem;
+    padding: 0;
   }
 }
-/* skills media queries ends*/
+@media screen and (max-width: 500px) {
+  .skills .container .row {
+    grid-template-columns: 1fr;
+  }
+}
 /* skills section ends */
 
 /* education section starts */
@@ -1302,19 +1285,17 @@ form .button-area {
   /* margin: auto; */
 }
 
-.skill-percent-number {
-  margin-top: 6%;
-  /* margin-left: 20px; */
-  font-size: 16px;
-}
 .skill-level {
-  margin-top: 20%;
+  margin-top: 2rem;     
   width: 90%;
   height: 10px;
   background-color: purple;
   border-radius: 10px;
   overflow: hidden;
-  /* margin-left: 20px; */
+}
+.skill-percent-number {
+  margin-top: 1rem;    
+  font-size: 16px;
 }
 .card {
   width: 190px;
